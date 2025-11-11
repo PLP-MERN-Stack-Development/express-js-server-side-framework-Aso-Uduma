@@ -1,62 +1,81 @@
-# Express.js RESTful API Assignment
 
-This assignment focuses on building a RESTful API using Express.js, implementing proper routing, middleware, and error handling.
+# Express.js Server Side Framework Assignment
 
-## Assignment Overview
+This project is a simple Express.js server application designed for learning and practicing server-side development using Node.js and Express. It demonstrates RESTful API design, middleware usage, error handling, and basic CRUD operations for a products resource.
 
-You will:
-1. Set up an Express.js server
-2. Create RESTful API routes for a product resource
-3. Implement custom middleware for logging, authentication, and validation
-4. Add comprehensive error handling
-5. Develop advanced features like filtering, pagination, and search
+## Features
+- Express.js server setup
+- Products API with CRUD operations
+- Modular route handling
+- Custom error handling middleware
+- Authentication and validation middleware
+- MongoDB integration for data persistence
+
+## Project Structure
+```
+├── server.js                # Main server entry point
+├── package.json             # Project dependencies and scripts
+├── config/
+│   └── db.js                # Database connection setup
+├── errors/
+│   ├── NotFoundErrors.js    # Custom 404 error class
+│   └── ValidationErrors.js  # Custom validation error class
+├── midddleware/
+│   ├── auth.js              # Authentication middleware
+│   ├── ErrorHandler.js      # Error handling middleware
+│   ├── logger.js            # Request logging middleware
+│   └── validation.js        # Request validation middleware
+├── models/
+│   └── products.js          # Mongoose product model
+├── routes/
+│   └── productsRoutes.js    # Product routes
+├── README.md                # Project documentation
+└── Week2-Assignment.md      # Assignment instructions
+```
 
 ## Getting Started
 
-1. Accept the GitHub Classroom assignment invitation
-2. Clone your personal repository that was created by GitHub Classroom
-3. Install dependencies:
+### Prerequisites
+- Node.js (v14 or higher recommended)
+- npm
+- MongoDB (local or cloud instance)
+
+### Installation
+1. Clone the repository:
+   ```powershell
+   git clone <repo-url>
+   cd express-js-server-side-framework-Aso-Uduma
    ```
+2. Install dependencies:
+   ```powershell
    npm install
    ```
-4. Run the server:
-   ```
-   npm start
-   ```
+3. Configure MongoDB connection in `config/db.js` if needed.
 
-## Files Included
-
-- `Week2-Assignment.md`: Detailed assignment instructions
-- `server.js`: Starter Express.js server file
-- `.env.example`: Example environment variables file
-
-## Requirements
-
-- Node.js (v18 or higher)
-- npm or yarn
-- Postman, Insomnia, or curl for API testing
+### Running the Server
+```powershell
+npm start
+```
+The server will start on the port specified in your environment or default to 3000.
 
 ## API Endpoints
+- `GET /api/products` - List all products
+- `GET /api/products/:id` - Get a product by ID
+- `POST /api/products` - Create a new product
+- `PUT /api/products/:id` - Update a product
+- `DELETE /api/products/:id` - Delete a product
 
-The API will have the following endpoints:
+## Middleware
+- **auth.js**: Protects routes with authentication logic
+- **validation.js**: Validates incoming requests
+- **ErrorHandler.js**: Handles errors and sends appropriate responses
+- **logger.js**: Logs incoming requests
 
-- `GET /api/products`: Get all products
-- `GET /api/products/:id`: Get a specific product
-- `POST /api/products`: Create a new product
-- `PUT /api/products/:id`: Update a product
-- `DELETE /api/products/:id`: Delete a product
+## Error Handling
+Custom error classes and middleware are used to handle validation and not found errors, providing clear responses to the client.
 
-## Submission
+## License
+This project is for educational purposes.
 
-Your work will be automatically submitted when you push to your GitHub Classroom repository. Make sure to:
-
-1. Complete all the required API endpoints
-2. Implement the middleware and error handling
-3. Document your API in the README.md
-4. Include examples of requests and responses
-
-## Resources
-
-- [Express.js Documentation](https://expressjs.com/)
-- [RESTful API Design Best Practices](https://restfulapi.net/)
-- [HTTP Status Codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status) 
+## Author
+Aso Uduma
